@@ -32,9 +32,9 @@ export const apiListProduct = async (params) => {
 //   "category_id": 0
 // }
 
-export const apiCreateProduct = async (id, params) => {
+export const apiCreateProduct = async (params) => {
     try {
-        const response = await POST("/category/" + id, params);
+        const response = await POST("/product/", params);
         return {
             state: REQUEST_STATE.SUCCESS,
             data: response.data
@@ -169,9 +169,9 @@ export const apiListHotProduct = async (params) => {
     }
 };
 
-export const apiSetHotProduct = async (id, params) => {
+export const apiSetHotProduct = async (id) => {
     try {
-        const response = await GET("/hot-product/set/" + id, params, { isFullPath: false });
+        const response = await GET("/hot-product/set/" + id, { isFullPath: false });
         return {
             state: REQUEST_STATE.SUCCESS,
             data: response.data
@@ -186,9 +186,9 @@ export const apiSetHotProduct = async (id, params) => {
     }
 };
 
-export const apiUnSetHotProduct = async (params) => {
+export const apiUnSetHotProduct = async (id) => {
     try {
-        const response = await GET("/hot-product/unset/", params, { isFullPath: false });
+        const response = await GET("/hot-product/unset/"+ id, { isFullPath: false });
         return {
             state: REQUEST_STATE.SUCCESS,
             data: response.data

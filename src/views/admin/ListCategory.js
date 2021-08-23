@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 
 // components
-import CardMainSubCategory from "components/Cards/CardMainSubCategory";
+import CardListCategory from "components/Cards/CardListCategory";
 import { notification } from 'antd';
 import { REQUEST_STATE } from "app-configs";
 import FullPageLoading from "components/Loading/FullPageLoading";
 import { categoryService } from "data-services/category";
 
 export default function ListCategory() {
-    const [mainSubCategory, setMainSubCategory] = useState([])
+    const [category, setCategory] = useState([])
     const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
-        const getMainSubCategory = async () => {
-            const mainSubCategory = await categoryService.listCategoryWithSubCategory();
-            setMainSubCategory(mainSubCategory.data);
+        const getCategory = async () => {
+            const category = await categoryService.listCategory();
+            setCategory(category.data);
         }
-        getMainSubCategory();
+        getCategory();
     }, [])
 
-    const handleDeleteMainCategory = async (id) => {
+    const handleDeleteCategory = async (id) => {
         setIsLoading(true);
-        const response = await categoryService.deleteMainCategory(id);
+        const response = await categoryService.deleteCategory(id);
         if (response.state === REQUEST_STATE.SUCCESS) {
-            const mainSubCategoryTmp = mainSubCategory.filter((item) => {
+            const categoryTmp = category.filter((item) => {
                 if (Number(item.id) !== Number(id)) {
                     return item;
                 }
@@ -32,7 +32,7 @@ export default function ListCategory() {
                 description:
                     "Remove main category successfully",
             });
-            setMainSubCategory(mainSubCategoryTmp);
+            setCategory(categoryTmp);
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
@@ -45,41 +45,6 @@ export default function ListCategory() {
         setIsLoading(false);
 
     }
-    const handleDeleteSubCategory = async (mainId, subId) => {
-        setIsLoading(true);
-        const response = await categoryService.deleteSubCategory(subId);
-        if (response.state === REQUEST_STATE.SUCCESS) {
-            let subMainTemp = [...mainSubCategory];
-            subMainTemp = subMainTemp.map((subMainItem) => {
-                if (subMainItem.id === mainId) {
-                    subMainItem.sub_category = subMainItem.sub_category.filter((sub) => {
-                        if (sub.id !== subId) {
-                            return sub;
-                        }
-                    })
-                }
-                return subMainItem;
-            })
-            notification['success']({
-                message: 'Remove sub-category',
-                description:
-                    'Remove sub-category successfully',
-            });
-
-            setMainSubCategory(subMainTemp);
-        }
-
-        if (response.state === REQUEST_STATE.ERROR) {
-            notification['error']({
-                message: 'Remove sub-category',
-                description:
-                    'An error occur when remove sub category',
-            });
-        }
-
-        setIsLoading(false);
-    }
-
     return (
         <>
             {isLoading && <FullPageLoading />}
@@ -88,7 +53,7 @@ export default function ListCategory() {
                     <div className="px-8 py-3 rounded-t flex flex-wrap justify-between items-center bg-white">
                         <div className="relative w-full max-w-full flex-grow flex-1">
                             <h3 className="mb-0 font-semibold text-lg text-blueGray-700">
-                                List category
+                                Tất cả danh mục
                             </h3>
                         </div>
                         <button
@@ -96,7 +61,7 @@ export default function ListCategory() {
                             className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                             type="button"
                         >
-                            Add category
+                            Thêm danh mục
                         </button>
                     </div>
                 </div>
@@ -104,13 +69,12 @@ export default function ListCategory() {
                     <div
                         className="relative flex flex-wrap"
                     >
-                        {mainSubCategory.map((subMain) => {
+                        {category.map((item) => {
                             return (
-                                <CardMainSubCategory
-                                    handleDeleteMainCategory={handleDeleteMainCategory}
-                                    handleDeleteSubCategory={handleDeleteSubCategory}
-                                    key={subMain.id}
-                                    subMain={subMain}
+                                <CardListCategory
+                                    handleDeleteCategory={handleDeleteCategory}
+                                    key={item.id}
+                                    category={item}
                                 />
                             )
                         })}

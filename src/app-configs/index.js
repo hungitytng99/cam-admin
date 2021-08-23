@@ -22,3 +22,10 @@ export const ACTION_TYPE = {
     UPDATE: "UPDATE",
     UNMOUNT: "UNMOUNT"
 };
+
+export const EDITOR_OPTION = {
+    options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'history', 'colorPicker', 'image', 'remove',],
+    inline: {
+        options: ['bold', 'italic', 'underline', 'strikethrough'],
+    }
+}

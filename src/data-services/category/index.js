@@ -1,6 +1,7 @@
 // Data Flow: Step 2
 
 import { productService } from "data-services/product";
+import { apiDeleteCategory } from "data-source/category";
 import { apiDetailCategoryBySlug } from "data-source/category";
 import { apiListCategory } from "data-source/category";
 import { apiDetailCategoryById } from "data-source/category";
@@ -42,7 +43,13 @@ export const categoryService = {
             }
         }
         return listCategoryWithProduct;
-    }
+    },
+
+    deleteCategory:  function (id) {
+        return apiDeleteCategory(id).then(response => {
+            return response;
+        });
+    },
 }
 
 export const filterFieldCategory = (category) => {

@@ -1,6 +1,7 @@
 import React from "react";
 // components
 import ProductDropdown from "components/Dropdowns/ProductDropdown";
+import { numberWithCommas } from "data-services/product";
 
 export default function CardListProducts(props) {
   const { listProducts = [], handleDeleteProduct, handleSetHotProduct } = props;
@@ -82,13 +83,13 @@ export default function CardListProducts(props) {
                         {product.name}
                       </td>
                       <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
-                        {product.price}
+                        {numberWithCommas(product.price)}
                       </td>
                       <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
                         {product.discount}
                       </td>
                       <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
-                        {product.new_price}
+                        {numberWithCommas(product.new_price)}
                       </td>
                       <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
                         <div className="flex flex-wrap">

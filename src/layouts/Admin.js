@@ -31,9 +31,7 @@ export default function Admin() {
             <Route path="/admin/category" exact component={ListCategory} />
             <Route path="/admin/add-category" exact component={AddCategory} />
             <Route path="/admin/edit-main-category/:id" exact component={EditMainCategory} />
-
             <Route path="/admin/list-inquiry" exact component={ListInquiry} />
-
             <Redirect from="/admin" to="/admin/list-products" />
           </Switch>
           <FooterAdmin />

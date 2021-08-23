@@ -14,50 +14,49 @@ export default function CardListHotProducts(props) {
             <thead>
               <tr>
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                 >
                   ID
                 </th>
+
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                 >
-                  Model
+                  Tên
                 </th>
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                >
-                  Name
-                </th>
-                <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
 
                 >
-                  Price
+                  Giá (VND)
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                    "px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                   }
                 >
-                  Material
+                  Giảm giá (%)
                 </th>
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className={
+                    "px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  }
                 >
-                  Image
+                  Giá mới
                 </th>
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                 >
-                  Sub category
+                  Ảnh
                 </th>
+
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                 >
-                  Category
+                  Danh mục
                 </th>
                 <th
-                  className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                  className="px-3 align-middle border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                 >
                 </th>
               </tr>
@@ -66,7 +65,7 @@ export default function CardListHotProducts(props) {
               {
                 listProducts.length === 0 && <tr>
                   <td colSpan="9" className="text-center py-4">
-                    Found no hot product
+                    Chưa đặt sản phẩm nào là sản phẩm bán chạy
                   </td>
                 </tr>
               }
@@ -74,31 +73,29 @@ export default function CardListHotProducts(props) {
                 listProducts.map((product) => {
                   return (
                     <tr key={product.id}>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
                         {product.id}
                       </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {product.model}
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
+                        {product.name}
                       </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {product.title}
-                      </td>
-
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
                         {product.price}
                       </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {product.material}
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
+                        {product.discount}
                       </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <div className="flex">
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
+                        {product.new_price}
+                      </td>
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm">
+                        <div className="flex flex-wrap">
                           {
                             product.image.map((img) => {
                               return (
-                                <img
-                                  key={img}
-                                  src={img}
-                                  alt="..."
+                                <img key={img.id}
+                                  src={img.src}
+                                  alt={img.alt}
                                   className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
                                 ></img>
                               )
@@ -106,11 +103,8 @@ export default function CardListHotProducts(props) {
                           }
                         </div>
                       </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      <td className="border-t-0 px-3 py-3 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4">
                         {product.category_name}
-                      </td>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {product.main_category_name}
                       </td>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                         <HotProductDropdown

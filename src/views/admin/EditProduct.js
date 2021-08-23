@@ -10,27 +10,27 @@ export default function EditProduct(props) {
 
   useEffect(() => {
     const getDetailProduct = async () => {
-      const detailProduct = await productService.detailProductByIdAsync(productId);
+      const detailProduct = await productService.detailProductById(productId);
       setDetailProductState(detailProduct);
     }
     getDetailProduct();
   }, [])
 
-  const submitEditMainCategory = async (params) => {
+  const submitEditCategory = async (params) => {
     const response = await productService.updateProduct(productId, params)
     if(response.state === REQUEST_STATE.SUCCESS) {
       notification['success']({
-          message: 'Update product',
+          message: 'Cập nhật sản phẩm',
           description:
-              response.data.message,
+              "Thành công",
       });
   }
 
   if(response.state === REQUEST_STATE.ERROR) {
       notification['error']({
-          message: 'Update product',
+          message: 'Cập nhật sản phẩm',
           description:
-              'An error occur when update product',
+              'Một lỗi xảy ra khi cập nhật sản phẩm.',
       });
   }
   }
@@ -42,7 +42,7 @@ export default function EditProduct(props) {
           <CardEditProduct
             detailProduct={detailProductState}
             productId={productId} 
-            submitEditMainCategory={submitEditMainCategory}
+            submitEditCategory={submitEditCategory}
             />
         </div>
       </div>

@@ -19,7 +19,7 @@ const ProductDropdown = (props) => {
   }
   const menu = (
     <Menu>
-      <Menu.Item>
+      <Menu.Item key={1}>
         <a
           href={`/admin/edit-products/${productId}`}
           className="text-sm py-1 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700 hover:cursor-pointer"
@@ -27,7 +27,7 @@ const ProductDropdown = (props) => {
           Sửa
         </a>
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item key={2}>
         <div
           href="/"
           className={
@@ -38,7 +38,7 @@ const ProductDropdown = (props) => {
          Xóa
         </div>
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item key={3}>
         <div
           className="text-sm py-1 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700 hover:cursor-pointer"
           onClick={() => handleSetHotProduct(productId)}

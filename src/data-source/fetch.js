@@ -9,17 +9,18 @@ export const getOptions = (options) => {
     const opts = {
         headers: {
             'Content-Type': 'application/json',
+            'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjI5NjgxNDU1LCJleHAiOjE2Mjk3Njc4NTV9.m0yA4x_tQUJdBhvgpXbxbzBJgKXWelBvKl4zk9__qTw',
         },
         ...options
     };
     
-    if (!token) {
-        token = jsCookie.get("token");
-    }
+    // if (!token) {
+    //     token = jsCookie.get("token");
+    // }
 
-    if (token) {
-        opts.headers['x-access-token'] = token;
-    }
+    // if (token) {
+    //     opts.headers['x-access-token'] = token;
+    // }
 
     return opts;
 };

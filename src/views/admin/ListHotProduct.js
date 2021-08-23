@@ -15,12 +15,10 @@ export default function ListHotProduct() {
 
     useEffect(() => {
         const getListProduct = async () => {
-            const listResult = await productService.listHotProductAsync();
+            const listResult = await productService.listHotProduct();
             for (let i = 0; i < listResult.data.length; i++) {
-                const subCategory = await categoryService.detailSubCategoryAsync(listResult.data[i].category_id);
+                const subCategory = await categoryService.detailCategoryById(listResult.data[i].category_id);
                 listResult.data[i].category_name = subCategory.data.name;
-                listResult.data[i].main_category_name = subCategory.data.main_category_name;
-
             }
             setListProducts(listResult);
         }
@@ -32,17 +30,17 @@ export default function ListHotProduct() {
         setIsReload(!isReload);
         if (response.state === REQUEST_STATE.SUCCESS) {
             notification['success']({
-                message: 'Remove hot product',
+                message: 'Xóa sản phẩm bán chạy',
                 description:
-                    response.data.message,
+                    "Thành công",
             });
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Remove hot product',
+                message: 'Xóa sản phẩm bán chạy',
                 description:
-                    'An error occur when remove hot product',
+                    'Một lỗi đã xảy ra khi xóa sản phẩm này',
             });
         }
         setIsLoading(false);
@@ -63,26 +61,20 @@ export default function ListHotProduct() {
                                     <h3
                                         className="mb-0 font-semibold text-lg text-blueGray-700"
                                     >
-                                        List hot products
+                                        Danh sách sản phẩm bán chạy
                                     </h3>
                                 </div>
-                                <a
-                                    href='/admin/list-hot-products'
-                                    className="bg-red-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 hover:text-white"
-                                >
-                                    Hot product
-                                </a>
                                 <a
                                     href='/admin/add-products'
                                     className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 hover:text-white"
                                 >
-                                    Add product
+                                    Thêm sản phẩm
                                 </a>
                                 <a
                                     href='/admin/list-products'
                                     className="bg-gray-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 hover:text-white"
                                 >
-                                    Back
+                                    Trở về
                                 </a>
 
                             </div>

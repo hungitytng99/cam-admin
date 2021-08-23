@@ -38,17 +38,17 @@ export default function ListProducts() {
             })
             setListProducts(listProductsTmp);
             notification['success']({
-                message: 'Delete product',
+                message: 'Xóa sản phẩm',
                 description:
-                    'Detele product successfully',
+                    'Thành công',
             });
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Delete product',
+                message: 'Xóa sản phẩm',
                 description:
-                    response.data.message,
+                    'Một lỗi đã xảy ra',
             });
         }
 
@@ -60,16 +60,16 @@ export default function ListProducts() {
         const response = await productService.setHotProduct(id);
         if (response.state === REQUEST_STATE.SUCCESS) {
             notification['success']({
-                message: 'Set hot product',
+                message: 'Sản phẩm bán chạy',
                 description:
-                    response.data.message,
+                    'Thành công',
             });
         }
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Set hot product',
+                message: 'Sản phẩm bán chạy',
                 description:
-                    'This product have already been hot product',
+                    'Sản phẩm này đã là sản phẩm bán chạy',
             });
         }
         setIsLoading(false);

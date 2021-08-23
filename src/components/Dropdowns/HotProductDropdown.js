@@ -7,7 +7,7 @@ const HotProductDropdown = (props) => {
     // dropdown props
     const menu = (
         <Menu>
-            <Menu.Item>
+            <Menu.Item key={1}>
                 <div
                     className={
                         "text-sm py-1 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700 hover:cursor-pointer"
