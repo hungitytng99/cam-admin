@@ -59,9 +59,9 @@ export const apiDetailCategoryBySlug = async (slug) => {
 //     "main_category_id": 0
 //   }
 
-export const apiCreateCategory = async (categoryId, params) => {
+export const apiCreateCategory = async ( params) => {
     try {
-        const response = await POST("/category/" + categoryId, params);
+        const response = await POST("/category/" , params);
         return {
             state: REQUEST_STATE.SUCCESS,
             data: response.data

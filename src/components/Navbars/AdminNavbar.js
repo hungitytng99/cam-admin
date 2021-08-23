@@ -17,7 +17,7 @@ export default function Navbar() {
             className="text-white text-sm uppercase hidden md:block lg:inline-block font-semibold hover:text-white"
             href="/"
           >
-            ADMIN BOARD
+            BẢNG ADMIN
           </a>
           {/* Form */}
           {/* User */}

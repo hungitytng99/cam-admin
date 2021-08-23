@@ -21,7 +21,7 @@ export default function CardListInquiry(props) {
                                 <th
                                     className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                                 >
-                                    Customer Name
+                                    Tên khách hàng
                                 </th>
                                 <th
                                     className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
@@ -32,19 +32,19 @@ export default function CardListInquiry(props) {
                                     className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
 
                                 >
-                                    Phone
+                                    Số điện thoại
                                 </th>
                                 <th
                                     className={
                                         "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                                     }
                                 >
-                                    Message
+                                    Lời nhắn
                                 </th>
                                 <th
                                     className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                                 >
-                                    Product
+                                    Sản phẩm
                                 </th>
                             </tr>
                         </thead>

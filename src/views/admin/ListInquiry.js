@@ -22,7 +22,7 @@ export default function ListInquiry(props) {
                             <div className="flex flex-wrap justify-between items-center">
                                 <div className="relative w-full max-w-full flex-grow flex-1">
                                     <h3 className="mb-0 font-semibold text-lg text-blueGray-700" >
-                                        List inquiries
+                                        Danh sách lời nhắn khách hàng
                                     </h3>
                                 </div>
                             </div>
