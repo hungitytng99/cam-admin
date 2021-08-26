@@ -61,7 +61,7 @@ export default function Login() {
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Usernames
+                      Tài khoản
                     </label>
                     <input
                       onChange={formik.handleChange}
@@ -82,7 +82,7 @@ export default function Login() {
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Password
+                      Mật khẩu
                     </label>
                     <input
                       onChange={formik.handleChange}
@@ -105,7 +105,7 @@ export default function Login() {
                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
-                        Remember me
+                        Nhớ tôi
                       </span>
                     </label>
                   </div>
