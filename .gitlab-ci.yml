@@ -8,10 +8,10 @@ deploy_development:
   only:
     - main
   script:
-    # - cp -r -u * /srv/abizin/projvstask_web
-    # - cd /srv/abizin/projvstask_web
+    - cp -r -u * /srv/abizin/gmv_admin
+    - cd /srv/abizin/gmv_admin
     # - cp /srv/abizin/projvstask_web/.env.production /srv/abizin/projvstask_web/.env
-    - npm
+    - npm install
     - CI=false npm run build
     # - pm2 delete abizinweb2
     # - pm2 serve build 3028 --spa --name projvstask_web
