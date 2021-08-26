@@ -12,7 +12,7 @@ deploy_development:
     # - cd /srv/abizin/projvstask_web
     # - cp /srv/abizin/projvstask_web/.env.production /srv/abizin/projvstask_web/.env
     - npm
-    - CI=false yarn build
+    - CI=false npm run build
     # - pm2 delete abizinweb2
     # - pm2 serve build 3028 --spa --name projvstask_web
     # - pm2 reload projvstask_web

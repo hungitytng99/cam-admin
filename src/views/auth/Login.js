@@ -61,7 +61,7 @@ export default function Login() {
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Username
+                      Usernames
                     </label>
                     <input
                       onChange={formik.handleChange}
