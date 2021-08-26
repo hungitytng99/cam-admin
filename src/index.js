@@ -10,12 +10,11 @@ import Auth from "layouts/Auth.js";
 import PrivateRoute from "PrivateRoute";
 import { PublicRoute } from "PublicRoute";
 // views without layouts
-
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/auth" component={Auth} />
-      <Route path="/admin" component={Admin} />
+      <PublicRoute path="/auth" component={Auth} />
+      <PrivateRoute path="/admin" component={Admin} />
       <Redirect from="/*" to="/auth/login" />
     </Switch>
   </BrowserRouter>,

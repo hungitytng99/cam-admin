@@ -3,6 +3,9 @@
 
 import { apiListPostByTagId } from "data-source/post";
 import { apiDetailPostBySlug } from "data-source/post";
+import { apiDeletePost } from "data-source/post";
+import { apiUpdatePost } from "data-source/post";
+import { apiCreatePost } from "data-source/post";
 import { apiListPostByTagSlug } from "data-source/post";
 import { apiListPost } from "data-source/post";
 import { apiDetailPostById } from "data-source/post";
@@ -49,6 +52,23 @@ export const postService = {
             return response;
         });
     },
+    addPost: function (params) {
+        return apiCreatePost(params).then(response => {
+            return response;
+        });
+    },
+
+    deletePost: function (id) {
+        return apiDeletePost(id).then(response => {
+            return response;
+        });
+    },
+
+    updatePost: function(id, params) {
+        return apiUpdatePost(id,params).then(response => {
+            return response;
+        })
+    }
 }
 
 export const filterFieldPost = (post) => {

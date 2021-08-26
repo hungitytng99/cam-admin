@@ -1,41 +1,41 @@
 import React, { useEffect, useState } from "react";
 
 // components
-import CardEditMainCategory from "components/Cards/CardEditMainCategory";
+import CardEditCategory from "components/Cards/CardEditCategory";
 import { REQUEST_STATE } from "app-configs";
 import { notification } from "antd";
 import FullPageLoading from "components/Loading/FullPageLoading";
 import { categoryService } from "data-services/category";
 
-export default function EditMainCategory(props) {
+export default function EditCategory(props) {
     const mainCategoryId = props.match.params.id;
     const [mainCategory, setMainCategory] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        const getDetailMainCategory = async () => {
-            const detailSubCategory = await categoryService.detailMainCategoryAsync(mainCategoryId);
-            setMainCategory(detailSubCategory)
+        const getDetailCategory = async () => {
+            const detailCategory = await categoryService.detailCategoryById(mainCategoryId);
+            setMainCategory(detailCategory)
         }
-        getDetailMainCategory();
+        getDetailCategory();
     }, [])
 
-    const submitEditMainCategory = async (values) => {
+    const submitEditCategory = async (values) => {
         setIsLoading(true);
-        const response = await categoryService.updateMainCategory(mainCategoryId, values);
+        const response = await categoryService.updateCategory(mainCategoryId, values);
         if (response.state === REQUEST_STATE.SUCCESS) {
             notification['success']({
-                message: 'Edit main category',
+                message: 'Chỉnh sửa danh mục',
                 description:
-                    'Update main category successfully',
+                    'Thành công',
             });
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Edit main category',
+                message: 'Chỉnh sửa danh mục',
                 description:
-                    'An error occur when remove main category',
+                    'Một lỗi đã xảy ra khi chỉnh sửa',
             });
         }
         setIsLoading(false);
@@ -47,13 +47,13 @@ export default function EditMainCategory(props) {
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 bg-white">
                 <div className="rounded-t bg-white mb-0 px-6 py-6">
                     <div className="text-center flex justify-between">
-                        <h6 className="text-blueGray-700 text-xl font-bold">Edit category</h6>
+                        <h6 className="text-blueGray-700 text-xl font-bold">Chỉnh sửa danh mục</h6>
                     </div>
                 </div>
                 {/* ff */}
-                <CardEditMainCategory
-                    detailMainCategory={mainCategory}
-                    submitEditMainCategory={submitEditMainCategory}
+                <CardEditCategory
+                    detailCategory={mainCategory}
+                    submitEditCategory={submitEditCategory}
                 />
             </div>
         </>

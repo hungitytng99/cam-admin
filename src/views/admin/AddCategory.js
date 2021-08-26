@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 // components
 import { categoryService } from "data-services/category";
-import CardAddSubCategory from "components/Cards/CardAddSubCategory";
-import CardAddMainCategory from "components/Cards/CardAddMainCategory";
+import CardAddCategory from "components/Cards/CardAddCategory";
 import { REQUEST_STATE } from "app-configs";
 import { notification } from "antd";
 import FullPageLoading from "components/Loading/FullPageLoading";
@@ -16,17 +15,17 @@ export default function AddCategory(props) {
         const response = await categoryService.createCategory(values);
         if (response.state === REQUEST_STATE.SUCCESS) {
             notification['success']({
-                message: 'Add main category',
+                message: 'Thêm danh mục',
                 description:
-                    'Add main category successfully',
+                    'Thêm danh mục thành công',
             });
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Add main category',
+                message: 'Thêm danh mục',
                 description:
-                    'An error occur when add main category',
+                    'Một lỗi đã xảy ra khi thêm danh mục',
             });
         }
         setIsLoading(false);
@@ -64,7 +63,7 @@ export default function AddCategory(props) {
                 </div>
                 {/* ff */}
                 <div className="mb-6">
-                    <CardAddMainCategory addCategory={addCategory} />
+                    <CardAddCategory addCategory={addCategory} />
                 </div>
             </div>
         </>

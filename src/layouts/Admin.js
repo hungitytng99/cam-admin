@@ -8,16 +8,19 @@ import ListProducts from "views/admin/ListProducts.js";
 import AddProducts from "views/admin/AddProducts.js";
 import ListCategory from "views/admin/ListCategory.js";
 import AddCategory from "views/admin/AddCategory";
-import EditMainCategory from "views/admin/EditMainCategory";
+import EditCategory from "views/admin/EditCategory";
 import ListHotProduct from "views/admin/ListHotProduct";
 import EditProduct from "views/admin/EditProduct";
 import ListInquiry from "views/admin/ListInquiry";
+import AddPost from "views/admin/AddPost";
+import ListPost from "views/admin/ListPost";
+import EditPost from "views/admin/EditPost";
 
 export default function Admin() {
   return (
     <>
       <Sidebar />
-      <div className="relative md:ml-64 bg-blueGray-100">
+      <div className="relative md:ml-64 bg-blueGray-100 min-h-full" style={{minHeight: '100vh'}}>
         <AdminNavbar />
         {/* Header */}
         <HeaderStats />
@@ -30,11 +33,15 @@ export default function Admin() {
 
             <Route path="/admin/category" exact component={ListCategory} />
             <Route path="/admin/add-category" exact component={AddCategory} />
-            <Route path="/admin/edit-main-category/:id" exact component={EditMainCategory} />
+            <Route path="/admin/edit-main-category/:id" exact component={EditCategory} />
             <Route path="/admin/list-inquiry" exact component={ListInquiry} />
+
+            <Route path="/admin/add-post" exact component={AddPost} />
+            <Route path="/admin/list-post" exact component={ListPost} />
+            <Route path="/admin/edit-post/:id" exact component={EditPost} />
+
             <Redirect from="/admin" to="/admin/list-products" />
           </Switch>
-          <FooterAdmin />
         </div>
       </div>
     </>

@@ -15,7 +15,7 @@ export default function Login() {
       .required('This field is required'),
   });
 
-  const openNotificationWithIcon = (type, title = 'Login failed!', message = "Your username or password is incorrect !") => {
+  const openNotificationWithIcon = (type, title = 'Đăng nhập thất bại', message = "Tài khoản hoặc mật khẩu của bạn không đúng") => {
     notification[type]({
       message: title,
       description:
@@ -32,13 +32,13 @@ export default function Login() {
       const response = await userService.signIn(values);
       if (response.state === REQUEST_STATE.ERROR) {
         if (!response.data.response && response.data.message.indexOf("Network Error") !== -1) {
-          openNotificationWithIcon('error', "Network error", "There is a problem with server or your network connection");
+          openNotificationWithIcon('error', "Lỗi mạng", "Kiểm tra lại kết nối mạng của bạn");
         } else {
           openNotificationWithIcon('error');
         }
       } else if (response.state === REQUEST_STATE.SUCCESS) {
         Cookies.set('token', response.data['access-token']);
-        openNotificationWithIcon('success', "Login successfully!", "Wait a second...");
+        openNotificationWithIcon('success', "Đăng nhập thành công!", "Đợi 1 chút...");
         setTimeout(() => {
           window.location.href = "/admin/list-products"
         }, 500)
@@ -115,7 +115,7 @@ export default function Login() {
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="submit"
                     >
-                      Sign In
+                      Đăng nhập
                     </button>
                   </div>
                 </form>

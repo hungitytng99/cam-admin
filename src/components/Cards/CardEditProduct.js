@@ -7,7 +7,6 @@ import { ContentState, convertFromHTML, convertToRaw, EditorState } from "draft-
 import { Editor } from "react-draft-wysiwyg";
 import { EDITOR_OPTION } from "app-configs";
 import draftjsToHtml from "draftjs-to-html";
-import { numberWithCommas } from "data-services/product";
 // components
 
 export default function CardEditProduct(props) {
@@ -142,7 +141,6 @@ export default function CardEditProduct(props) {
                         <div className="flex flex-wrap">
                             <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">
-
                                     <label
                                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                     >

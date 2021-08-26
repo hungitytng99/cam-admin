@@ -9,7 +9,6 @@ import { Popconfirm } from 'antd';
 export default function CardListCategory(props) {
     const { category, handleDeleteCategory, handleSubCategory } = props;
 
-    console.log(category);
     function confirm() {
         handleDeleteCategory(category.id)
     }
@@ -23,7 +22,7 @@ export default function CardListCategory(props) {
                         <div className="flex flex-wrap justify-between items-center">
                             <div className="relative px-4 max-w-full flex-grow flex-1">
                                 <h3
-                                    className="font-semibold text-lg text-blueGray-700"
+                                    className="font-semibold text-lg text-blueGray-700 mb-0"
                                 >
                                     {category.name}
                                 </h3>

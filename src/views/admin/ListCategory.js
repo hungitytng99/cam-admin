@@ -12,11 +12,14 @@ export default function ListCategory() {
     const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         const getCategory = async () => {
-            const category = await categoryService.listCategory();
-            setCategory(category.data);
+            const categoryFetch = await categoryService.listCategory();
+            console.log(categoryFetch);
+            if (JSON.stringify(category) !== JSON.stringify(categoryFetch.data)) {
+                setCategory(categoryFetch.data);
+            }
         }
         getCategory();
-    }, [])
+    }, [category])
 
     const handleDeleteCategory = async (id) => {
         setIsLoading(true);
@@ -28,18 +31,18 @@ export default function ListCategory() {
                 }
             })
             notification['success']({
-                message: 'Remove main category',
+                message: 'Xóa danh mục',
                 description:
-                    "Remove main category successfully",
+                    "Thành công",
             });
             setCategory(categoryTmp);
         }
 
         if (response.state === REQUEST_STATE.ERROR) {
             notification['error']({
-                message: 'Remove main category',
+                message: 'Xóa danh mục',
                 description:
-                    'An error occur when remove main category',
+                    'Một lỗi đã xảy ra khi xóa danh mục',
             });
         }
         setIsLoading(false);

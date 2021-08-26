@@ -3,15 +3,15 @@ import 'antd/dist/antd.css';
 import { Modal } from 'antd';
 import { Menu, Dropdown, } from 'antd';
 
-const ProductDropdown = (props) => {
-  const { productId, handleDeleteProduct, handleSetHotProduct } = props;
+const PostDropdown = (props) => {
+  const { postId, handleDeletePost } = props;
   // for confirm
   const [confirm, setConfirm] = React.useState(false);
   const showModal = () => {
     setConfirm(true);
   };
   const handleOk = () => {
-    handleDeleteProduct(productId);
+    handleDeletePost(postId);
     setConfirm(false);
   }
   const handleCancel = () => {
@@ -21,7 +21,7 @@ const ProductDropdown = (props) => {
     <Menu>
       <Menu.Item key={1}>
         <a
-          href={`/admin/edit-products/${productId}`}
+          href={`/admin/edit-post/${postId}`}
           className="text-sm py-1 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700 hover:cursor-pointer"
         >
           Sửa
@@ -36,14 +36,6 @@ const ProductDropdown = (props) => {
           onClick={showModal}
         >
          Xóa
-        </div>
-      </Menu.Item>
-      <Menu.Item key={3}>
-        <div
-          className="text-sm py-1 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700 hover:cursor-pointer"
-          onClick={() => handleSetHotProduct(productId)}
-        >
-          Đặt là sản phẩm bán chạy
         </div>
       </Menu.Item>
     </Menu>
@@ -62,10 +54,10 @@ const ProductDropdown = (props) => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p>Chắc chắn xóa sản phẩm này?'</p>
+        <p>Are you sure to delete this product?'</p>
       </Modal>
     </>
   );
 };
 
-export default ProductDropdown;
+export default PostDropdown;

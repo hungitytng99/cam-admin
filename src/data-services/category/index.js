@@ -2,6 +2,7 @@
 
 import { productService } from "data-services/product";
 import { apiDeleteCategory } from "data-source/category";
+import { apiUpdateCategory } from "data-source/category";
 import { apiCreateCategory } from "data-source/category";
 import { apiDetailCategoryBySlug } from "data-source/category";
 import { apiListCategory } from "data-source/category";
@@ -46,18 +47,23 @@ export const categoryService = {
         return listCategoryWithProduct;
     },
 
-    deleteCategory:  function (id) {
+    deleteCategory: function (id) {
         return apiDeleteCategory(id).then(response => {
             return response;
         });
     },
 
-    createCategory:  function (params) {
+    createCategory: function (params) {
         return apiCreateCategory(params).then(response => {
             return response;
         });
     },
 
+    updateCategory: function (id, params) {
+        return apiUpdateCategory(id, params).then(response => {
+            return response;
+        });
+    }
 }
 
 export const filterFieldCategory = (category) => {

@@ -62,7 +62,7 @@ export default function Sidebar() {
             </div>
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-3 no-underline">
-              Actions
+              Thao tác
             </h6>
             {/* Navigation */}
 
@@ -85,7 +85,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Products
+                  Sản phẩm
                 </Link>
               </li>
 
@@ -107,7 +107,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Category
+                  Danh mục
                 </Link>
               </li>
               <li className="items-center">
@@ -128,7 +128,28 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Inquiry
+                  Liên hệ
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  className={
+                    "text-xs uppercase py-2 font-bold block " +
+                    (window.location.href.indexOf("/admin/list-post") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/list-post"
+                >
+                  <i
+                    className={
+                      "far fa-newspaper mr-2 text-sm" +
+                      (window.location.href.indexOf("/admin/list-post") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Đăng bài
                 </Link>
               </li>
             </ul>

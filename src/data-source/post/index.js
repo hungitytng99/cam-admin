@@ -24,7 +24,7 @@ export const apiCreatePost = async (params) => {
         const response = await POST("/post/",  params);
         return {
             state: REQUEST_STATE.SUCCESS,
-            data: response.data
+            data: response
         };
 
     } catch (error) {
