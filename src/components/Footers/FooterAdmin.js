@@ -14,7 +14,7 @@ export default function FooterAdmin() {
                   href="https://www.giangminhviet.com"
                   className="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
                 >
-                  Giang minh viet
+                  Camera
                 </a>
               </div>
             </div>
