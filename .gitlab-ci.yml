@@ -1,0 +1,19 @@
+stages:
+  - deploy
+deploy_development:
+  type: deploy
+  stage: deploy
+  tags:
+    - deploy_development
+  only:
+    - main
+  script:
+    # - cp -r -u * /srv/abizin/projvstask_web
+    # - cd /srv/abizin/projvstask_web
+    # - cp /srv/abizin/projvstask_web/.env.production /srv/abizin/projvstask_web/.env
+    - npm
+    - CI=false yarn build
+    # - pm2 delete abizinweb2
+    # - pm2 serve build 3028 --spa --name projvstask_web
+    # - pm2 reload projvstask_web
+    # - pm2 list
