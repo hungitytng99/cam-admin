@@ -1,6 +1,6 @@
 // config for dev;
 export const Configs = {
-    BASE_API: "https:/api.camerazone.vn/api",
+    BASE_API: "https://api.camerazone.vn/api",
 
     CURRENT_PAGE: 1,
     FILE_MAXIMUM: 2, //MB
