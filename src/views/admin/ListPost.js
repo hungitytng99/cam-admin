@@ -6,20 +6,19 @@ import { productService } from "data-services/product/index.js";
 import FullPageLoading from "components/Loading/FullPageLoading";
 import { REQUEST_STATE } from "app-configs";
 import { notification } from 'antd';
-import { categoryService } from "data-services/category";
 import CardListPosts from "components/Cards/CardListPosts";
 import { postService } from "data-services/post";
 
 
 export default function ListPost() {
     const [listPosts, setListPosts] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const getListPost = async () => {
             const listResult = await postService.listPost();
             setListPosts(listResult);
-            console.log(listResult);
+            setIsLoading(false);
         }
         getListPost();
     }, [])

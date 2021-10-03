@@ -15,6 +15,7 @@ import ListInquiry from "views/admin/ListInquiry";
 import AddPost from "views/admin/AddPost";
 import ListPost from "views/admin/ListPost";
 import EditPost from "views/admin/EditPost";
+import UpdateBanner from "views/admin/UpdateBanner";
 
 export default function Admin() {
   return (
@@ -40,7 +41,9 @@ export default function Admin() {
             <Route path="/admin/list-post" exact component={ListPost} />
             <Route path="/admin/edit-post/:id" exact component={EditPost} />
 
-            <Redirect from="/admin" to="/admin/list-products" />
+            <Route path="/admin/update-banner" exact component={UpdateBanner} />
+
+            <Redirect from="/admin/" to="/admin/list-products" />
           </Switch>
         </div>
       </div>

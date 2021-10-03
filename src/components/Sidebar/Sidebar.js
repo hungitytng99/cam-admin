@@ -22,11 +22,23 @@ export default function Sidebar() {
           </button>
           {/* Brand */}
           <Link
-            className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+            className="md:block text-left md:pb-0 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            Giang minh việt
+            Camera Anh Quang
           </Link>
+          <div
+            className="flex text-left text-blueGray-600 mr-0 whitespace-nowrap text-sm px-0 mt-3"
+            to="/"
+          >
+            <div className="font-bold pr-2">Hỗ trợ kĩ thuật: </div> 0981.199.350
+          </div>
+          <div
+            className="flex text-left md:pb-2 text-blueGray-600 mr-0 whitespace-nowrap text-sm px-0"
+            to="/"
+          >
+            <div className="font-bold pr-2">Tải ảnh: </div> <a target="_blank" href="https://taianh.xyz"> taianh.xyz </a>
+          </div>
           {/* User */}
           <div className="block md:hidden">
             <button onClick={() => handleLogout()} className="bg-gray-500 text-white px-4 py-1 rounded-md focus:outline-none"> Logout</button>
@@ -46,7 +58,7 @@ export default function Sidebar() {
                     className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     to="/"
                   >
-                    Giang minh việt
+                    Camera Anh Quang
                   </Link>
                 </div>
                 <div className="w-6/12 flex justify-end">
@@ -61,7 +73,7 @@ export default function Sidebar() {
               </div>
             </div>
             {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-3 no-underline">
+            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block no-underline">
               Thao tác
             </h6>
             {/* Navigation */}
@@ -150,6 +162,27 @@ export default function Sidebar() {
                     }
                   ></i>{" "}
                   Đăng bài
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  className={
+                    "text-xs uppercase py-2 font-bold block " +
+                    (window.location.href.indexOf("/admin/update-banner") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/update-banner"
+                >
+                  <i
+                    className={
+                      "far fa-image mr-2 text-sm" +
+                      (window.location.href.indexOf("/admin/update-banner") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Sửa ảnh banner
                 </Link>
               </li>
             </ul>

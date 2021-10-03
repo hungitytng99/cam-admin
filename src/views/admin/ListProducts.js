@@ -11,7 +11,7 @@ import { categoryService } from "data-services/category";
 
 export default function ListProducts() {
     const [listProducts, setListProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [searchProduct, setSearchProduct] = useState('');
 
     useEffect(() => {
@@ -22,6 +22,7 @@ export default function ListProducts() {
                 listResult.data[i].category_name = subCategory.data.name;
             }
             setListProducts(listResult);
+            setIsLoading(false);
         }
         getListProduct();
     }, [])

@@ -17,12 +17,12 @@ export default function Navbar() {
             className="text-white text-sm uppercase hidden md:block lg:inline-block font-semibold hover:text-white"
             href="/"
           >
-            BẢNG ADMIN
+            BẢNG QUẢN TRỊ
           </a>
           {/* Form */}
           {/* User */}
           <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
-              <button onClick={handleLogout} className="bg-gray-500 text-white px-4 py-1 rounded-md focus:outline-none"> Logout</button>
+              <button onClick={handleLogout} className="bg-gray-500 text-white px-4 py-1 rounded-md focus:outline-none"> Đăng xuất</button>
           </ul>
         </div>
       </nav>

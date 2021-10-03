@@ -1586,16 +1586,12 @@ select {
   padding-top: 0px;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pl-2 {
   padding-left: 0.5rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 
 .pr-4 {
@@ -2120,6 +2116,10 @@ select {
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .md\:pb-2 {

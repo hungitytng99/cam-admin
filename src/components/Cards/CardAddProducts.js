@@ -112,17 +112,17 @@ export default function CardAddProducts() {
                             const response = await productService.createProduct(params);
                             if (response.state === REQUEST_STATE.SUCCESS) {
                                 notification['success']({
-                                    message: 'Add product',
+                                    message: 'Thêm sản phẩm',
                                     description:
-                                        'Add product successfully',
+                                        'Thêm sản phẩm thành công!',
                                 });
                             }
 
                             if (response.state === REQUEST_STATE.ERROR) {
                                 notification['error']({
-                                    message: 'Add product',
+                                    message: 'Thêm sản phẩm',
                                     description:
-                                        categorySelected.value ? response.data.message : 'You must select category',
+                                        categorySelected.value ? 'Một lỗi đã xảy ra khi thêm sản phẩm!' : 'Vui lòng chọn danh mục',
                                 });
                             }
                             setIsLoading(false);
@@ -337,7 +337,7 @@ export default function CardAddProducts() {
                                         className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                                         type="submit"
                                     >
-                                        Add product
+                                        Thêm sản phẩm
                                     </button>
                                 </div>
 
